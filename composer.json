@@ -15,7 +15,8 @@
     ],
     "require": {
         "php": "^8.2",
-        "illuminate/support": "^10.0|^11.0"
+        "illuminate/support": "^10.0|^11.0",
+        "norman-huth/php-library-contracts": "^1.0-rc.1"
     },
     "require-dev": {
         "illuminate/console": "^10.0|^11.0",
