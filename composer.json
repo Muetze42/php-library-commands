@@ -4,7 +4,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "NormanHuth\\Library\\": "src/"
+            "NormanHuth\\Library\\": ""
         }
     },
     "authors": [
