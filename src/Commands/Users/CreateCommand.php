@@ -89,7 +89,7 @@ class CreateCommand extends Command
             ['email' => [
                 'required',
                 'email:rfc,dns',
-                $this->user ? 'unique:users,id,' . $this->user->getKey() : 'unique:users',
+                $this->user ? 'unique:users,id,'.$this->user->getKey() : 'unique:users',
             ]]
         );
 

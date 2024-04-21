@@ -73,7 +73,7 @@ class PivotMigrateMakeCommand extends GeneratorCommand
         $this->snake0 = Str::snake($models[0]);
         $this->snake1 = Str::snake($models[1]);
 
-        $this->table = $this->snake0 . '_' . $this->snake1;
+        $this->table = $this->snake0.'_'.$this->snake1;
 
         $this->filename = $this->option('filename') ?? $this->getFilename();
 
@@ -84,12 +84,12 @@ class PivotMigrateMakeCommand extends GeneratorCommand
 
         $this->files->put($path, $this->sortImports($this->buildClass()));
 
-        $this->info($this->type . ' created successfully.');
+        $this->info($this->type.' created successfully.');
     }
 
     protected function getFilename(): string
     {
-        return now()->format('Y_m_d_His') . '_create_' . $this->table . '_pivot_table';
+        return now()->format('Y_m_d_His').'_create_'.$this->table.'_pivot_table';
     }
 
     /**
@@ -97,15 +97,15 @@ class PivotMigrateMakeCommand extends GeneratorCommand
      */
     protected function getFullPath(): string
     {
-        $file = str_ends_with($this->filename, '.php') ? $this->filename : $this->filename . '.php';
+        $file = str_ends_with($this->filename, '.php') ? $this->filename : $this->filename.'.php';
 
-        return $this->getMigrationPath() . '/' . $file;
+        return $this->getMigrationPath().'/'.$file;
     }
 
     /**
      * Build the class with the given name.
      *
-     * @param string $name
+     * @param  string  $name
      *
      * @throws FileNotFoundException
      */
@@ -119,19 +119,18 @@ class PivotMigrateMakeCommand extends GeneratorCommand
     /**
      * Replace the namespace for the given stub.
      *
-     * @param string $stub
-     * @param string $name
-     *
+     * @param  string  $stub
+     * @param  string  $name
      * @return $this
      */
     protected function replaceNamespace(&$stub, $name): static
     {
         $replaces = [
-            '{{table}}'     => $this->table,
-            '{{snake0}}'    => $this->snake0,
-            '{{snake1}}'    => $this->snake1,
-            '{{table0}}'    => $this->table0,
-            '{{table1}}'    => $this->table1,
+            '{{table}}' => $this->table,
+            '{{snake0}}' => $this->snake0,
+            '{{snake1}}' => $this->snake1,
+            '{{table0}}' => $this->table0,
+            '{{table1}}' => $this->table1,
             '{{id1column}}' => $this->id1column,
             '{{id2column}}' => $this->id2column,
         ];
@@ -151,7 +150,7 @@ class PivotMigrateMakeCommand extends GeneratorCommand
             return $file;
         }
 
-        return dirname(__DIR__, 3) . '/stubs/migration.pivot.stub';
+        return dirname(__DIR__, 3).'/stubs/migration.pivot.stub';
     }
 
     /**
@@ -159,6 +158,6 @@ class PivotMigrateMakeCommand extends GeneratorCommand
      */
     protected function getMigrationPath(): string
     {
-        return $this->path ?: $this->laravel->basePath() . '/database/migrations';
+        return $this->path ?: $this->laravel->basePath().'/database/migrations';
     }
 }

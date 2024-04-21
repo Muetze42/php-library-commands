@@ -36,7 +36,7 @@ class IdeHelperCommand extends Command
         $this->call(
             'ide-helper:models',
             [
-                '--write'   => false,
+                '--write' => false,
                 '--nowrite' => true,
             ]
         );

@@ -13,8 +13,8 @@ class ConsoleMakeCommand extends Command
     /**
      * Replace the class name for the given stub.
      *
-     * @param string $stub
-     * @param string $name
+     * @param  string  $stub
+     * @param  string  $name
      */
     protected function replaceClass($stub, $name): string
     {
@@ -22,7 +22,7 @@ class ConsoleMakeCommand extends Command
 
         $command = $this->option('command');
 
-        if (!$command) {
+        if (! $command) {
             $command = Str::of($this->rootNamespace())->classBasename()->lower()->value();
 
             if (str_ends_with($name, 'Command') && strlen($name) > 7) {
@@ -34,7 +34,7 @@ class ConsoleMakeCommand extends Command
             $levels = explode('\\', $commandClass);
 
             foreach ($levels as $level) {
-                $command .= ':' . Str::kebab($level);
+                $command .= ':'.Str::kebab($level);
             }
         }
 
