@@ -16,11 +16,10 @@
     "require": {
         "php": "^8.2",
         "illuminate/support": "^10.0|^11.0",
-        "norman-huth/php-library-contracts": "^1.0-rc.1"
+        "norman-huth/php-library-contracts": "^1.0"
     },
     "require-dev": {
         "illuminate/console": "^10.0|^11.0",
-        "illuminate/database": "^10.0|^11.0",
-        "laravel/pint": "^1.15"
+        "illuminate/database": "^10.0|^11.0"
     }
 }

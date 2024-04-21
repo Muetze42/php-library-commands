@@ -34,7 +34,7 @@ class ListAdminsCommand extends Command
     {
         $admins = User::whereIsAdmin(true)->get(['id', 'name', 'email']);
 
-        if (!$admins->count()) {
+        if (! $admins->count()) {
             $this->components->info('This application has no administrators');
 
             return;
